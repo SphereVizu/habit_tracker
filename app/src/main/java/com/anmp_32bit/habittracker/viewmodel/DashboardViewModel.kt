@@ -3,7 +3,7 @@ package com.anmp_32bit.habittracker.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.anmp_32bit.habittracker.model.Habit
-
+import com.anmp_32bit.habittracker.model.HabitStorage
 class DashboardViewModel : ViewModel() {
     val habitListLD = MutableLiveData<ArrayList<Habit>>()
 
@@ -12,7 +12,17 @@ class DashboardViewModel : ViewModel() {
             Habit(1, "Drink Water", "Stay hydrated throughout the day", 3, 8, "glasses", com.anmp_32bit.habittracker.R.drawable.ic_water),
             Habit(2, "Exercise", "Daily workout routine", 30, 30, "minutes", com.anmp_32bit.habittracker.R.drawable.ic_exercise)
         )
-        habitListLD.value = dummy
+        if (HabitStorage.habitList.isEmpty()) {
+            HabitStorage.habitList.addAll(dummy)
+        }
+
+        habitListLD.value = HabitStorage.habitList
+    }
+    fun addHabit(habit: Habit) {
+
+        HabitStorage.habitList.add(habit)
+
+        habitListLD.value = HabitStorage.habitList
     }
 
     fun updateProgress(habitId: Int, delta: Int) {

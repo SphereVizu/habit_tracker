@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.anmp_32bit.habittracker.R
 import com.anmp_32bit.habittracker.databinding.FragmentDashboardBinding
 import com.anmp_32bit.habittracker.viewmodel.DashboardViewModel
+import androidx.navigation.fragment.findNavController
 
 class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
     private lateinit var binding: FragmentDashboardBinding
@@ -31,7 +32,15 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
             habitAdapter.habits = newList
             habitAdapter.notifyDataSetChanged()
         }
-
         viewModel.fetch()
+
+        binding.fabAdd.setOnClickListener {
+
+            val action =
+                DashboardFragmentDirections
+                    .actionDashboardFragmentToNewHabitFragment()
+
+            findNavController().navigate(action)
+        }
     }
 }
