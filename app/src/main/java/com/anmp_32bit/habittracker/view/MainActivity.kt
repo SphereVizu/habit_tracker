@@ -13,4 +13,4 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 }
-// Update identitas git untuk pengecekan
+// Cek Update Git
