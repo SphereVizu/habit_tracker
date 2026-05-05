@@ -6,16 +6,16 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.anmp_32bit.habittracker.DashboardFragment"
+        android:name="com.anmp_32bit.habittracker.view.DashboardFragment"
         android:label="Dashboard Screen"
-        tools:layout="@layout/fragment_dashboard" >
+        tools:layout="@layout/fragment_dashboard">
         <action
             android:id="@+id/actionLoginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.anmp_32bit.habittracker.LoginFragment"
+        android:name="com.anmp_32bit.habittracker.view.LoginFragment"
         android:label="Login Screen"
         tools:layout="@layout/fragment_login">
         <action

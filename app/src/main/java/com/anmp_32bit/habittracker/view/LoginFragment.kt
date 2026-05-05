@@ -1,6 +1,5 @@
-package com.anmp_32bit.habittracker
+package com.anmp_32bit.habittracker.view
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.anmp_32bit.habittracker.databinding.FragmentLoginBinding
-import kotlin.toString
 
 class LoginFragment : Fragment() {
     private  lateinit var binding: FragmentLoginBinding
